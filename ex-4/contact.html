@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Cinecraftz</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: #f5f7fa;
+      }
+
+      /* Header/Navbar */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+        padding: 10px 40px;
+        color: white;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+      .logo img {
+        width: 50px;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+      .logo h1 {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .nav {
+        display: flex;
+        gap: 20px;
+      }
+      .nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 8px 14px;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+      }
+      .nav a:hover {
+        background: #ffd700;
+        color: #333;
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+      .hamburger span {
+        height: 3px;
+        width: 25px;
+        background: white;
+        margin: 4px 0;
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+
+      /* Hero */
+      .hero {
+        background: url("./assets/img/contact-banner.jpg") no-repeat center
+          center/cover;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        position: relative;
+        margin-top: 70px;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+      .hero h2 {
+        font-size: 38px;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 6px black;
+      }
+      .hero p {
+        font-size: 18px;
+      }
+
+      /* Contact Section */
+      .contact {
+        max-width: 700px;
+        margin: 60px auto;
+        padding: 0 20px;
+      }
+      .contact-form {
+        width: 500px;
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+      .contact-form h3 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        color: #4caf50;
+        text-align: center;
+      }
+      .form-group {
+        margin-bottom: 18px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        color: #333;
+        font-weight: bold;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 15px;
+      }
+      .form-group textarea {
+        resize: none;
+        height: 120px;
+      }
+      .form-group button {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 25px;
+        background: #4caf50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .form-group button:hover {
+        background: #388e3c;
+        transform: scale(1.05);
+      }
+
+      /* Footer */
+      .footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: auto;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .contact-form {
+          width: 370px;
+        }
+        .nav {
+          position: absolute;
+          top: 70px;
+          right: 0;
+          background: rgba(0, 0, 0, 0.9);
+          flex-direction: column;
+          gap: 15px;
+          width: 200px;
+          padding: 20px;
+          display: none;
+        }
+        .nav.active {
+          display: flex;
+        }
+        .hamburger {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <img src="./assets/img/C_Logo.png" alt="Logo" />
+        <h1>Cinecraftz</h1>
+      </div>
+      <div class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-content">
+        <h2>Contact Us</h2>
+        <p>
+          We’d love to hear from you. Fill out the form below and we’ll get back
+          soon.
+        </p>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+      <div class="contact-form">
+        <h3>Send us a message</h3>
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              placeholder="Write your message..."
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">© 2025 Cinecraftz | All Rights Reserved</div>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("nav").classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
